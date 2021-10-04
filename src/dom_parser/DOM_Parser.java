@@ -15,23 +15,23 @@ import org.xml.sax.SAXException;
 
 public class DOM_Parser {
 
-    private static final String INDENT_NIVEL = "  ";  // Para indentaci贸n
+    private static final String INDENT_NIVEL = "  ";  // Para indentaci髇
 
     public static void muestraNodo(Node nodo, int nivel, PrintStream ps) {
-        if (nodo.getNodeType() == Node.TEXT_NODE) { // Ignora textos vac铆os
+        if (nodo.getNodeType() == Node.TEXT_NODE) { // Ignora textos vac韔s
             String text = nodo.getNodeValue();
             if (text.trim().length() == 0) {
                 return;
             }
         }
-        for (int i = 0; i < nivel; i++) {    // Indentaci贸n
+        for (int i = 0; i < nivel; i++) {    // Indentaci髇
             ps.print(INDENT_NIVEL);
         }
-        switch (nodo.getNodeType()) {  // Escribe informaci贸n de nodo seg煤n tipo
+        switch (nodo.getNodeType()) {  // Escribe informaci贸n de nodo seg鷑n tipo
             case Node.DOCUMENT_NODE:  // Documento
                 Document doc = (Document) nodo;
-                ps.println("Documento DOM, versi贸n: " + doc.getXmlVersion()
-                        + ", codificaci贸n: " + doc.getXmlEncoding());
+                ps.println("Documento DOM, versi髇: " + doc.getXmlVersion()
+                        + ", codificaci髇: " + doc.getXmlEncoding());
                 break;
             case Node.ELEMENT_NODE:    // Elemento
                 ps.print("<" + nodo.getNodeName());
